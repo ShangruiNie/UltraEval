@@ -1,0 +1,19 @@
+{
+    "task_name": "ppl-based-qa",
+    "path": "datasets/bbq-en/bbq-en.jsonl",
+    "description": "",
+    "transform": "datasets/bbq-en/transform_ppl_v0.py",
+    "fewshot": 0,
+    "generate": {
+        "method": "loglikelihood", 
+        "params": ""
+    },
+    "postprocess": "",
+    "metric": {
+            "accuracy": {
+                "evaluation": {
+                    "type": "exact_match"
+                }
+            }
+        }
+}

@@ -5,7 +5,7 @@ HF_MODEL_NAME=""
 PER_PROC_GPUS=1 # 每个子进程占用GPU数，默认全部占用，单进程；该值必须能被POD内可用GPUs总数整除，worker数量=gpu总数/该数值
 CUDA_VISIBLE_DEVICES=""
 PORT=5002 # 默认端口号
-INFER_TYPE="vLLM" # 默认推理类型，需选择"vLLM" or "transformers"，后者即使用 transformers 进行模型的部署推理
+INFER_TYPE="x" # 默认推理类型，需选择"vLLM" or "x"，后者即使用 transformers 进行模型的部署推理
 
 
 # 解析长选项

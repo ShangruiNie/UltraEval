@@ -15,8 +15,8 @@ workers = gdp.workers_num()
 # determine deploy type, currently support 'vLLM' and 'transformers'
 if infer_type == "vLLM":
     wsgi_app = 'URLs.vllm_url_m:app'
-elif infer_type == "transformers":
-    wsgi_app = 'URLs.transformers_url_m:app'
+elif infer_type == "x":
+    wsgi_app = 'URLs.llama8b_instruct:app'
 
 proc_name = 'infer' 
 accesslog = '-'
