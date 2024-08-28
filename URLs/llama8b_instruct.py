@@ -41,8 +41,8 @@ print("Model and tokenizer initialized.")
 #参数字典可根据自有模型特点自定义
 params_dict = {
     "max_new_tokens": 100,
-    "temperature": 0.1,
-    "top_p": 0.95
+    "temperature": 0.3,
+    "top_p": 0.8
 }
 
 @app.route('/infer', methods=['POST'])

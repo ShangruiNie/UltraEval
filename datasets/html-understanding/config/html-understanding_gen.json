@@ -1,0 +1,19 @@
+{
+    "task_name": "html-understanding",
+    "path": "./datasets/html-understanding/data/html_understanding.jsonl",
+    "description": "",
+    "transform": "./datasets/html-understanding/transform_gen_v0.py",
+    "fewshot": 0,
+    "generate": {
+        "method": "generate",
+        "params": "./models/model_params/vllm_sample.json"
+    },
+    "postprocess": "",
+    "metric": {
+        "accuracy": {
+            "evaluation": {
+                "type": "exact_match"
+            }
+        }
+    }
+}
