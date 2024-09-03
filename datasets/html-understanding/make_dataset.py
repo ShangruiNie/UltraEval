@@ -7,7 +7,7 @@ def transform_entry(data_entry):
         "passage": data_entry["raw_content"],
         "question": data_entry["hint"],
         "target_scores": {},
-        "answer": data_entry["target_html"],
+        "answer": data_entry["target_index"],
     }
 
 
@@ -23,8 +23,8 @@ def convert(input_file_path, output_file_path):
 
 def main():
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    input_path = "/home/nie/repos/UltraEval/datasets/html-understanding/inputs_eval.jsonl"
-    output_path = "./datasets/html-understanding/text_boxes_processed.jsonl"
+    input_path = "/home/shangrui-nie/repos/UltraEval/datasets/html-understanding/RawData/htmls_high_buttons_axtree.jsonl"
+    output_path = "/home/shangrui-nie/repos/UltraEval/datasets/html-understanding/data/htmls_high_buttons_processed_axtree.jsonl"
     input_file_path = os.path.join(script_dir, input_path)
     output_file_path = os.path.join(script_dir, output_path)
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)

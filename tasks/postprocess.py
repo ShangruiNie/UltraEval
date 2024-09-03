@@ -680,6 +680,40 @@ class AGIEvalSingleAnswerPost:
                 return c
         return ""
 
+class HtmlUnderstandingButtonPost:
+    def __init__(self):
+        pass
+
+    def __call__(self, raw_outputs, processed_outputs):
+        if isinstance(raw_outputs, str):
+            raw_outputs = [raw_outputs]
+        return raw_outputs, [self.find_button_snippet(i) for i in raw_outputs]
+    
+    def find_button_snippet(self, html_string: str):
+        pattern = r'<button\s+class="[^"]*".*?>.*?</button>'
+        match = re.search(pattern, html_string)
+        if match:
+            return match.group(0)
+        else:
+            return ""
+            
+class HtmlUnderstandingButtonPostOnAxtree:
+    def __init__(self):
+        pass
+
+    def __call__(self, raw_outputs, processed_outputs):
+        if isinstance(raw_outputs, str):
+            raw_outputs = [raw_outputs]
+        return raw_outputs, [self.find_button_snippet(i) for i in raw_outputs]
+    
+    def find_button_snippet(self, html_string: str):
+        # find the fisrt number in the answer
+        pattern = r'\d+'
+        match = re.findall(pattern, html_string)
+        if match:
+            return match[0]
+        else:
+            return ""
 
 def _fix_fracs(string):
     substrs = string.split("\\frac")
@@ -904,7 +938,9 @@ POSTPROCESS_REGISTRY = {
     "agieval_multiple_answer_post": AGIEvalMultipleAnswerPost,
     "common_math_post": CommonMathPost,
     "new_mbpp_post": NewMbppPost,
-    "bbh_post": BBHPost
+    "bbh_post": BBHPost,
+    "html_understanding_button_post": HtmlUnderstandingButtonPost,
+    "html_understanding_button_post_axtree": HtmlUnderstandingButtonPostOnAxtree
 }
 
 

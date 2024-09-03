@@ -20,6 +20,7 @@ llm = LLM(
     model=args.model_name,
     trust_remote_code=True,
     tensor_parallel_size=len(args.gpuid.split(",")),
+    disable_custom_all_reduce=True,
 )
 
 # 模型的模型参数
