@@ -1,0 +1,19 @@
+{
+    "task_name": "html-understanding_axtree",
+    "path": "./datasets/html-understanding/data/htmls_less_buttons_processed_axtree.jsonl",
+    "description": "llama3_70B_instruct_axtree",
+    "transform": "./datasets/html-understanding/transform_gen_v1.py",
+    "fewshot": 0,
+    "generate": {
+        "method": "generate",
+        "params": "./models/model_params/vllm_sample.json"
+    },
+    "postprocess": "html_understanding_button_post_axtree",
+    "metric": {
+        "accuracy": {
+            "evaluation": {
+                "type": "exact_match"
+            }
+        }
+    }
+}

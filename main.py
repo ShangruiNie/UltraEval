@@ -51,12 +51,15 @@ class Evaluator:
         return data_config
 
     def build_tasks(self, configs):
-        tasks_map = {v["task_name"]: v for v in configs}
 
+        if isinstance(configs, list):
+            tasks_map = {v["task_name"]: v for v in configs}
+        else:
+            tasks_map = {configs["task_name"]: configs}
+        
         selected_task_objects = []
         for name in tasks_map:
             task_cfg = tasks_map[name]
-
             if not os.path.exists(task_cfg["path"]):
                 print(f'{task_cfg["path"]} not exist!')
                 exit()

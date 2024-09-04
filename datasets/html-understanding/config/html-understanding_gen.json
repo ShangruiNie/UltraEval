@@ -8,7 +8,7 @@
         "method": "generate",
         "params": "./models/model_params/vllm_sample.json"
     },
-    "postprocess": "",
+    "postprocess": "html_understanding_button_post",
     "metric": {
         "accuracy": {
             "evaluation": {
