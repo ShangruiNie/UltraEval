@@ -1,0 +1,19 @@
+{
+    "task_name": "webSRC-llama31-8b-axtree",
+    "path": "./datasets/webSRC/data/webSRC_axtree_processed.jsonl",
+    "description": "",
+    "transform": "./datasets/webSRC/transform_v1.py",
+    "fewshot": 0,
+    "generate": {
+        "method": "generate",
+        "params": "./models/model_params/vllm_sample.json"
+    },
+    "postprocess": "",
+    "metric": {
+        "accuracy": {
+            "evaluation": {
+                "type": "exact_match"
+            }
+        }
+    }
+}

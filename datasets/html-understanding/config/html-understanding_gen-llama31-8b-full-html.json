@@ -1,8 +1,8 @@
 {
-    "task_name": "html-understanding",
-    "path": "./datasets/html-understanding/data/htmls_high_buttons_processed.jsonl",
-    "description": "llama3_70B_instruct",
-    "transform": "./datasets/html-understanding/transform_gen_v0.py",
+    "task_name": "html-understanding-llama31-8b-full-html",
+    "path": "./datasets/html-understanding/data/htmls_less_buttons_processed.jsonl",
+    "description": "",
+    "transform": "./datasets/html-understanding/transform_gen_v2_one_shot_full_html.py",
     "fewshot": 0,
     "generate": {
         "method": "generate",

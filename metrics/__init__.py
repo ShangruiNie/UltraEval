@@ -1,3 +1,4 @@
+
 from .bleu import BLEU
 from .chrf import CHRF
 from .exact_match import ExactMatch
@@ -11,6 +12,7 @@ from .rouge import ROUGE
 from .in_match import InMatch
 from .qa_match import QaMatch
 from .gpt4_eval import GPT4Eval
+from .include import GtInModelOut
 
 METRICS_REGISTRY = {
     "bleu": BLEU,
@@ -26,6 +28,7 @@ METRICS_REGISTRY = {
     "in_match": InMatch,
     "qa_match": QaMatch,
     "gpt4_eval": GPT4Eval,
+    "gt_in_model_out": GtInModelOut,
 }
 
 

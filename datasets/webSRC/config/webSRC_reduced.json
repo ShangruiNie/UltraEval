@@ -1,0 +1,19 @@
+{
+    "task_name": "webSRC-llama31-8b-full-html",
+    "path": "./datasets/webSRC/data/webSRC_processed.jsonl",
+    "description": "",
+    "transform": "./datasets/webSRC/transform_v01.py",
+    "fewshot": 0,
+    "generate": {
+        "method": "generate",
+        "params": "./models/model_params/vllm_sample.json"
+    },
+    "postprocess": "",
+    "metric": {
+        "accuracy": {
+            "evaluation": {
+                "type": "gt_in_model_out"
+            }
+        }
+    }
+}

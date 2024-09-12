@@ -1,14 +1,14 @@
 {
     "task_name": "html-understanding_axtree",
-    "path": "./datasets/html-understanding/data/htmls_less_buttons_processed_axtree.jsonl",
+    "path": "./datasets/html-understanding/data/htmls_high_buttons_processed_axtree.jsonl",
     "description": "llama3_70B_instruct_axtree",
-    "transform": "./datasets/html-understanding/transform_gen_v1.py",
+    "transform": "./datasets/html-understanding/transform_gen_v2_one_shot_full_html.py",
     "fewshot": 0,
     "generate": {
         "method": "generate",
         "params": "./models/model_params/vllm_sample.json"
     },
-    "postprocess": "html_understanding_button_post_axtree",
+    "postprocess": "html_understanding_button_post",
     "metric": {
         "accuracy": {
             "evaluation": {

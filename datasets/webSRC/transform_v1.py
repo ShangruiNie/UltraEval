@@ -1,14 +1,14 @@
 import random
 
-# this transform is used for the html-understanding_gen task using axtree instead of the whole html body
+
 def transform(data, num_sample: int, r: random.Random, dataset_name: str):
     prompt = f"""<|start_header_id|>system<|end_header_id|>
-                You are a helpful assistant specialized in HTML. You can answer the correct index of html nodes based on given instructions.
+                You are a helpful assistant specialized in structure tree extracted from html file. You can answer the question based on given instructions.
                 <|eot_id|>
                 <|start_header_id|>user<|end_header_id|>
-                Here is a tree structure of a html page with index of each node: {data['passage']}
-                Please output the index of a button with button text="{data['question']}".
-                Answer the question and only output the corresponding index.
+                Here is structure tree extracted from html file: {data['passage']}
+                {data['question']}.
+                Now directly answer the question based on the given structure tree.
                 <|eot_id|>
                 <|start_header_id|>assistant<|end_header_id|>
                 """
