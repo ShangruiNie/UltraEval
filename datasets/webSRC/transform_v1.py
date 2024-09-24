@@ -8,7 +8,7 @@ def transform(data, num_sample: int, r: random.Random, dataset_name: str):
                 <|start_header_id|>user<|end_header_id|>
                 Here is structure tree extracted from html file: {data['passage']}
                 {data['question']}.
-                Now directly answer the question based on the given structure tree.
+                Now try to answer the question briefly, such as yes or no, or just use the words that appear in the structure tree.
                 <|eot_id|>
                 <|start_header_id|>assistant<|end_header_id|>
                 """

@@ -11,7 +11,7 @@ class GtInModelOut:
         if isinstance(ground_truth, str):
             ground_truth = [ground_truth]
         # if the ground truth is in the model output, then it's correct
-        return 1.0 if ground_truth[0].lower().strip() in results[0].lower().strip() else 0.0
+        return 1 if ground_truth[0].lower().strip() in results[0].lower().strip() else 0
 
 
 if __name__ == "__main__":
